@@ -18,6 +18,7 @@ class Auth extends CI_Controller {
 	{
 		$this->load->library("form_validation");
 		$this->data["_title"] = "Login";
+		$this->data["message"] = $this->session->flashdata("error_login");
 
 		$this->form_validation->set_rules("username", "Username", "required");
 		$this->form_validation->set_rules("password", "Password", "required");

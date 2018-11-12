@@ -3,7 +3,7 @@
   
 <head>
     <meta charset="utf-8">
-    <title><?php echo $_title?> - SIMUNIQ</title>
+    <title><?php echo $_title?></title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes"> 
@@ -35,7 +35,7 @@
 			</a>
 			
 			<a class="brand" href="#">
-				Universal Quotient				
+				SISTEM INFORMASI PENGELOLAAN PEKERJAAN MBD I
 			</a>		
 			
 			<div class="nav-collapse">
@@ -49,7 +49,7 @@
 					</li> -->
 					
 					<li class="">						
-						<a href="http://www.universalquotient.com" class="">
+						<a href="<?php echo base_url();?>" class="">
 							<i class="icon-chevron-left"></i>
 							Back to Homepage
 						</a>
@@ -77,13 +77,19 @@
 		}
 	</style>
 	<div class="logo-login">
-		<img src="<?php echo base_url()?>assets/img/logo/logo_login.png">
+		
 	</div>
 <div class="account-container">
 	
 	
 	<div class="content clearfix">
-		
+		<?php if(!empty($message)){ 
+          if($message){ ?>
+              <div class="alert alert-danger">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>Login Gagal, Username/Password salah!</strong>
+              </div>
+            <?php }} ?>
 		<form action="<?php echo base_url()?>auth/login" method="POST">
 		
 			<h1><center>Member Login</center></h1>		
@@ -105,11 +111,11 @@
 			<div class="login-actions">
 				
 				<span class="login-checkbox">
-					<input id="Field" name="Field" type="checkbox" class="field login-checkbox" value="First Choice" tabindex="4" />
-					<label class="choice" for="Field">Keep me signed in</label>
+					<!-- <input id="Field" name="Field" type="checkbox" class="field login-checkbox" value="First Choice" tabindex="4" />
+					<label class="choice" for="Field">Keep me signed in</label> -->
 				</span>
 									
-				<button class="button btn btn-success btn-large">Sign In</button>
+				<button class="button btn btn-success btn-large">Log In</button>
 				
 			</div> <!-- .actions -->
 			
@@ -122,7 +128,7 @@
 
 
 <div class="login-extra">
-	<a href="#">Reset Password</a>
+	<!-- <a href="#">Reset Password</a> -->
 </div> <!-- /login-extra -->
 
 

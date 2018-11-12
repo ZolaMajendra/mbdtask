@@ -33,16 +33,16 @@ class Auth_model extends CI_Model {
 
         $account_role = $this->db->get_where("sys__auth_account_role", array("account_id"=>$member_account[0]["account_id"]))->result_array();
         $member_profile = $this->db->get_where("member__profile", array("account_id"=>$member_account[0]["account_id"]))->result_array();
-        $data_branch = $this->db->get_where("master__branch", array("branch_id"=>$member_account[0]["branch_id"]))->row_array();
+        //$data_branch = $this->db->get_where("master__branch", array("branch_id"=>$member_account[0]["branch_id"]))->row_array();
 
         $this->session->set_userdata("account_id", $member_account[0]["account_id"]);
         $this->session->set_userdata("account_username", $username);
         $this->session->set_userdata("account_name", $member_profile[0]["first_name"]." ".$member_profile[0]["last_name"]);
         $this->session->set_userdata("account_role", $account_role[0]["role_id"]);
-        if($account_role[0]["role_id"] > 2) {
+        /*if($account_role[0]["role_id"] > 2) {
             $this->session->set_userdata("branch_id",$member_account[0]["branch_id"]);
             $this->session->set_userdata("kota_id",$data_branch["id_kota"]);
-        }
+        }*/
 
         return array(
             "status" => 200,
